@@ -331,7 +331,7 @@ static inline uint32_t le32_to_cpu(uint32_t *y)
 //FIXME: linux kernel's version of this macro checks the journal version >= 2.
 #define JOURNAL_HAS_INCOMPAT_FEATURE(j,mask)                               \
         ((j)->s_header.h_blocktype == 4 &&                                  \
-         ((j)->s_feature_incompat & ext2fs_cpu_to_be32((mask))))
+         ((j)->s_feature_incompat & (mask)))
 
 static size_t journ_tag_bytes(journal_superblock_t *jsb)
 {
